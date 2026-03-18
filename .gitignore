@@ -1,0 +1,23 @@
+# Python
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Data (too large for git)
+data/
+
+# Large checkpoint files (keep only final)
+outputs/checkpoints/checkpoint_epoch_0[0-4]*.pt
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test task PDF
+*.pdf
