@@ -1,0 +1,29 @@
+batch_size: 128
+channels: 3
+checkpoint_every: 10
+crop_size: 148
+data_dir: data
+dataset: celeba
+decoder_channels:
+- 512
+- 256
+- 128
+- 64
+encoder_channels:
+- 64
+- 128
+- 256
+- 512
+epochs: 50
+grad_clip_max_norm: 5.0
+image_size: 64
+kl_warmup_epochs: 20
+latent_dim: 256
+lr: 0.0003
+num_workers: 4
+optimizer: adamw
+output_dir: outputs
+sample_every: 5
+scheduler: cosine
+seed: 42
+weight_decay: 1.0e-05
