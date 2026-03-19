@@ -18,6 +18,14 @@ def get_transforms(crop_size: int = 148, image_size: int = 64):
     ])
 
 
+class CelebADataset(datasets.CelebA):
+    """CelebA with integrity check bypassed for Kaggle-sourced data."""
+
+    def _check_integrity(self) -> bool:
+        import os
+        return os.path.isdir(os.path.join(self.root, self.base_folder, "img_align_celeba"))
+
+
 def get_dataloaders(config: dict) -> tuple[DataLoader, DataLoader, DataLoader]:
     """Create train/val/test DataLoaders for CelebA.
 
@@ -26,17 +34,17 @@ def get_dataloaders(config: dict) -> tuple[DataLoader, DataLoader, DataLoader]:
     """
     transform = get_transforms(config["crop_size"], config["image_size"])
 
-    train_dataset = datasets.CelebA(
+    train_dataset = CelebADataset(
         root=config["data_dir"], split="train",
-        transform=transform, download=True,
+        transform=transform, download=False,
     )
-    val_dataset = datasets.CelebA(
+    val_dataset = CelebADataset(
         root=config["data_dir"], split="valid",
-        transform=transform, download=True,
+        transform=transform, download=False,
     )
-    test_dataset = datasets.CelebA(
+    test_dataset = CelebADataset(
         root=config["data_dir"], split="test",
-        transform=transform, download=True,
+        transform=transform, download=False,
     )
 
     loader_kwargs = dict(
