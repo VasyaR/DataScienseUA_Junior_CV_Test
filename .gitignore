@@ -8,8 +8,8 @@ __pycache__/
 # Data (too large for git)
 data/
 
-# Large checkpoint files (keep only final)
-outputs/checkpoints/checkpoint_epoch_0[0-4]*.pt
+# Checkpoint files (too large for GitHub, shared separately)
+outputs/checkpoints/*.pt
 
 # IDE
 .vscode/

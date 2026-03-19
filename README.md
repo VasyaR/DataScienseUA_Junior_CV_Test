@@ -101,6 +101,10 @@ Each block: ConvTranspose2d(4×4, stride=2, pad=1) + BatchNorm + LeakyReLU(0.2).
 4. **Perceptual loss** — Add a VGG-based perceptual term to the reconstruction loss. Penalizes structural differences rather than pixel-wise errors.
 5. **Larger resolution** — Train at 128×128 or 256×256 with a deeper network for more detail.
 
+## Pre-trained Weights
+
+Checkpoint files are too large for GitHub (~136 MB each). The final checkpoint (`checkpoint_epoch_050.pt`) is available upon request. Place it in `outputs/checkpoints/` to run evaluation without retraining.
+
 ## Reproducibility
 
 ```bash
