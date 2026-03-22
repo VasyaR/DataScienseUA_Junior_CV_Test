@@ -58,7 +58,7 @@ Each block: ConvTranspose2d(4×4, stride=2, pad=1) + BatchNorm + LeakyReLU(0.2).
 
 ### Reconstructions (Test Set)
 ![Reconstructions](outputs/images/test_reconstructions.png)
-*Top: originals. Bottom: reconstructions. Identity, hair color, and expression are preserved. Fine details (accessories, text) are lost — expected VAE behavior.*
+*Top: originals. Bottom: reconstructions. Identity, hair color, and expression are preserved. Fine details (accessories, text) are lost — expected VAE behavior. Age and Identity are not always preserved.*
 
 ### Random Samples from z ~ N(0, I)
 ![Samples](outputs/images/random_samples.png)
